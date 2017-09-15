@@ -20,7 +20,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         this.mDatas = mDatas;
     }
 
-    //点击事件的回调
+
+    //自定义触摸监听器
     public interface OnItemClickListener{
         void onItemClick(View view, int position);
         void onItemLongClick(View view, int position);
@@ -44,7 +45,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     @Override
     public void onBindViewHolder(final MyAdapter.MyViewHolder holder, final int position) {
         holder.wordTv.setText(mDatas.get(position));
-        holder.wordTv.setHeight((int) (Math.random()*100 + 150));
+//        holder.wordTv.setHeight((int) (Math.random()*100 + 150));//自定义高度
 
         //如果设置了回调，则设置点击事件
         if(mOnItemClickListener != null){
