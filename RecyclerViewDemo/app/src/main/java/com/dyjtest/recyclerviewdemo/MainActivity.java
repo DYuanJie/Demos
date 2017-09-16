@@ -1,5 +1,6 @@
 package com.dyjtest.recyclerviewdemo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
         //adapter
         mainRv.setAdapter(myAdapter);
+
+
+
 
         //分割线
         mainRv.addItemDecoration(new DividerGridItemDecoration(this));
@@ -127,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //标题栏菜单
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -141,6 +146,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.remove:
                 myAdapter.removeData(1);
+                break;
+            case R.id.base_recyclerview:
+                Intent intent = new Intent(this, BaseActivity.class);
+                startActivity(intent);
                 break;
         }
         return true;
