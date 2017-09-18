@@ -1,4 +1,4 @@
-package com.dyjtest.recyclerviewdemo;
+package com.dyjtest.recyclerviewdemo.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.dyjtest.recyclerviewdemo.R;
 
 import java.util.List;
 
@@ -62,7 +64,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
                 public boolean onLongClick(View v) {
                     int pos = holder.getLayoutPosition();
                     mOnItemClickListener.onItemLongClick(holder.itemView, pos);
-                    return false;
+                    return true;
                 }
             });
         }
