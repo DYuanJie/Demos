@@ -74,7 +74,7 @@ public class BaseActivity extends AppCompatActivity {
         //开启动画(默认为渐显效果) （渐显、缩放、从下到上，从左到右、从右到左）
 //        quickAdapter.openLoadAnimation();
         //切换动画
-        quickAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
+        quickAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
         //自定义动画
 //        quickAdapter.openLoadAnimation(new BaseAnimation() {
 //            @Override
@@ -97,17 +97,25 @@ public class BaseActivity extends AppCompatActivity {
         quickAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override
             public void onLoadMoreRequested() {
-                if(pageNum < 3) {
-                    quickAdapter.addData(mDatas);
-                    //加载完成
-                    quickAdapter.loadMoreComplete();
-                    pageNum++;
-                }else {
-                    //加载结束
-                    quickAdapter.loadMoreEnd();
-                    //加载失败
+                //加载新数据时，要创建多线程
+                baseRv.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(pageNum < 3) {
+                            quickAdapter.addData(mDatas);
+                            //加载完成
+                            quickAdapter.loadMoreComplete();
+                            pageNum++;
+
+                        }else {
+                            //加载结束
+                            quickAdapter.loadMoreEnd();
+                            //加载失败
 //                    quickAdapter.loadMoreFail();
-                }
+                        }
+                    }
+                }, 300);
+
             }
         });
         //打开或关闭加载（一般用于下拉的时候做处理，因为上拉下拉不能同时操作）

@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".activity.BaseActivity" />
         <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.MultipleViewActivity"></activity>
+        <activity android:name=".activity.MultipleViewActivity" />
+        <activity android:name=".activity.DragActivity"></activity>
     </application>
 
 </manifest>

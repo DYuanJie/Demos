@@ -13,19 +13,24 @@ import java.util.List;
  */
 
 public class MultipleItemQuickAdapter extends BaseMultiItemQuickAdapter<MultipleItem, BaseViewHolder> {
-    /**
-     * Same as QuickAdapter#QuickAdapter(Context,int) but with
-     * some initialization data.
-     *
-     * @param data A new list is created out of this one to avoid mutable list
-     */
+
+
     public MultipleItemQuickAdapter(List<MultipleItem> data) {
         super(data);
+        //绑定type和layout的关系
         addItemType(MultipleItem.TEXT, R.layout.multiple_item);
+        addItemType(MultipleItem.IMG, R.layout.multiple_item1);
     }
 
     @Override
     protected void convert(BaseViewHolder helper, MultipleItem item) {
-
+        switch (helper.getItemViewType()){
+            case MultipleItem.TEXT:
+                helper.setText(R.id.text1, "111");
+                break;
+            case MultipleItem.IMG:
+                helper.setImageResource(R.id.mul_iv, R.drawable.desert);
+                break;
+        }
     }
 }

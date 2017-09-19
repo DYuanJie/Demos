@@ -8,6 +8,7 @@ import com.chad.library.adapter.base.entity.MultiItemEntity;
  */
 
 public class MultipleItem implements MultiItemEntity {
+    //给每一个数据设置itemType
     public static final int TEXT = 1;
     public static final int IMG = 2;
     private int itemType;
