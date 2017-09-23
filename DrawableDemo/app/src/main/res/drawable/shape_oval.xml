@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!--设置形状默认的大小，可设置宽度和高度-->
+    <size android:width="30dp"
+        android:height="30dp"/>
+
+    <solid android:color="@color/colorPrimary"/>
+
+    <stroke android:color="@color/colorWhite"
+        android:width="0.5dp"
+        android:dashWidth="1dp"
+        android:dashGap="2dp"/>
+
+</shape>

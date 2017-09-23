@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!--放射渐变，设置该项时，android:gradientRadius也必须设置-->
+    <!--渐变中心的相对X坐标，放射渐变时才有效，在0.0到1.0之间，默认为0.5，表示在正中间-->
+    <gradient
+        android:type="radial"
+        android:startColor="@color/colorPrimary"
+        android:endColor="@color/colorWhite"
+        android:centerX="0.5"
+        android:gradientRadius="150dp"
+        android:centerY="0.5"/>
+
+    <stroke android:color="@color/colorBlack"
+        android:width="0.5dp"/>
+
+</shape>
