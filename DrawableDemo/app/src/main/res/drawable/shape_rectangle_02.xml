@@ -15,4 +15,7 @@
     <stroke android:color="@color/colorBlack"
         android:width="0.5dp"/>
 
+    <padding android:top="10dp"
+        android:bottom="10dp"/>
+
 </shape>

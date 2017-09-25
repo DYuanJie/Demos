@@ -5,7 +5,9 @@
     <solid android:color="@color/colorPrimary"/>
     <!--内容与形状边界的内间距-->
     <padding android:left="5dp"
-        android:right="5dp"/>
+        android:right="5dp"
+        android:top="10dp"
+        android:bottom="10dp"/>
     <!--渐变  线性渐变-->
     <!--android:angle 渐变的角度，线性渐变时才有效，必须是45的倍数，0表示从左到右，90表示从下到上-->
     <gradient

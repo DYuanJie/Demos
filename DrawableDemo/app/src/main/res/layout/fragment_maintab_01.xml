@@ -39,9 +39,18 @@
         android:layerType="software"/>
 
     <View
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
         android:background="@drawable/shape_ring_01"
+        android:text="5"/>
+
+    <View
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@drawable/shape_ring_02"
         android:text="5"/>
 
 </LinearLayout>
