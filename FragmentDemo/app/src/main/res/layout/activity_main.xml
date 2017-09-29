@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/fragment_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.dyjtest.fragmentdemo.fragment.TitleFragment"/>
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/menu_group"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radio_btn_01"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            style="@style/TextViewStyle"
+            android:textColor="@color/radio_btn_bg"
+            android:gravity="center"
+            android:text="tab1"/>
+
+        <RadioButton
+            android:id="@+id/radio_btn_02"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:textColor="@color/radio_btn_bg"
+
+            style="@style/TextViewStyle"
+            android:gravity="center"
+            android:text="tab2"/>
+
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FragmentDemo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_info_01">静态使用fragment，使用fragment标签，加上name属性</string>
+    <string name="fragment_info_02">先获得FragmentManager，FragmentTransaction，使用add/show/replace方法显示fragment，最后commit</string>
+</resources>

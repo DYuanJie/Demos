@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:background="@color/colorBase"
@@ -32,6 +33,11 @@
         android:layout_height="0dp"
         android:layout_weight="1"></ListView>
 
+    <FrameLayout
+        android:id="@+id/main_fg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"></FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,6 +66,5 @@
             android:background="@color/colorBase"
             android:text="全选"/>
     </LinearLayout>
-
 
 </LinearLayout>

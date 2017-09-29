@@ -1,8 +1,11 @@
 package com.dyjtest.listviewdemo;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -10,18 +13,21 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.dyjtest.listviewdemo.adapter.ListAdapter;
+import com.dyjtest.listviewdemo.fragment.NameDialogFragment;
 import com.dyjtest.listviewdemo.model.Bean;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,NameDialogFragment.InputListener {
     private TextView mainAdd;
     private Button btnDelete;
     private Button btnSelectAll;
     private ListView mainLv;
     private ListAdapter listAdapter;
+    private NameDialogFragment nameDialogFragment = null;
+    private FragmentManager fragmentManager = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +67,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.main_add:
-                listAdapter.addData(new Bean("001"));
-                listAdapter.notifyDataSetChanged();
+                showDialogInDifferentScreen(view);
+//                if (nameDialogFragment == null){
+//                    nameDialogFragment = new NameDialogFragment();
+//                }
+//                nameDialogFragment.show(getFragmentManager(), "name");
+
                 break;
             case R.id.main_select_all:
                 Map<Integer, Boolean> isCheck = listAdapter.getMap();
@@ -98,6 +108,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 btnSelectAll.setTextColor(Color.WHITE);
                 listAdapter.notifyDataSetChanged();
                 break;
+        }
+    }
+
+    @Override
+    public void inputCallBack(String name) {
+        nameDialogFragment.dismiss();
+        listAdapter.addData(new Bean(name));
+        listAdapter.notifyDataSetChanged();
+    }
+
+    public void showDialogInDifferentScreen(View view){
+        fragmentManager = getFragmentManager();
+        nameDialogFragment = new NameDialogFragment();
+
+        boolean mIsLargeLayout = getResources().getBoolean(R.bool.large_layout);
+        Log.d("DDD", "=============>"+mIsLargeLayout);
+        if(mIsLargeLayout){
+            nameDialogFragment.show(fragmentManager, "dialog");
+        }else {
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            transaction.replace(R.id.main_fg, nameDialogFragment).commit();
         }
     }
 }
