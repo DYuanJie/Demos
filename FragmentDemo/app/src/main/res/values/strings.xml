@@ -5,4 +5,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fragment_info_01">静态使用fragment，使用fragment标签，加上name属性</string>
     <string name="fragment_info_02">先获得FragmentManager，FragmentTransaction，使用add/show/replace方法显示fragment，最后commit</string>
+    <string name="spannable_string_info">setSpan(Object what, int start, int end, int flags) what表示设置的格式是什么 Spanned.SPAN_INCLUSIVE_EXCLUSIVE 从起始下标到终了下标，包括起始下标 Spanned.SPAN_INCLUSIVE_INCLUSIVE 从起始下标到终了下标，同时包括起始下标和终了下标 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE 从起始下标到终了下标，但都不包括起始下标和终了下标 Spanned.SPAN_EXCLUSIVE_INCLUSIVE 从起始下标到终了下标，包括终了下标</string>
 </resources>

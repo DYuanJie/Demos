@@ -5,8 +5,56 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        style="@style/TextViewStyle"
-        android:text="tab02"/>
+        android:layout_height="wrap_content"
+        style="@style/TextViewStyle1"
+        android:text="@string/spannable_string_info"/>
+
+    <TextView
+        android:id="@+id/spannable_string_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewStyle1"/>
+
+    <TextView
+        android:id="@+id/spannable_string_02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewStyle1"/>
+
+    <TextView
+        android:id="@+id/spannable_string_03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewStyle1"/>
+
+    <TextView
+        android:id="@+id/spannable_string_04"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewStyle1"/>
+
+    <TextView
+        android:id="@+id/spannable_string_05"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewStyle1"/>
+
+    <TextView
+        android:id="@+id/spannable_string_06"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewStyle1"/>
+
+    <TextView
+        android:id="@+id/spannable_string_07"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewStyle1"/>
+
+    <TextView
+        android:id="@+id/spannable_string_08"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewStyle1"/>
 
 </LinearLayout>
